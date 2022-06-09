@@ -32,8 +32,8 @@ public class PetStoreTest {
     @Test
     public void testGetPetById() {
         final Pet pet = petApi.getPetById(1234L);
-        assertEquals("Bidu", pet.getName());
-        assertEquals(Pet.StatusEnum.AVAILABLE, pet.getStatus());
+        assertEquals("Bidu", pet.name());
+        assertEquals(Pet.StatusEnum.AVAILABLE, pet.status());
 
         petstoreServer.verify(getRequestedFor(urlEqualTo("/pet/1234")));
     }

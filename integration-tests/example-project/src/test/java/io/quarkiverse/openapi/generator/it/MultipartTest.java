@@ -49,7 +49,7 @@ public class MultipartTest {
         }
 
         PostUserProfileDataMultipartForm requestBody = new PostUserProfileDataMultipartForm();
-        requestBody.address = new Address().street("Champs-Elysees").city("Paris");
+        requestBody.address = Address.builder().street("Champs-Elysees").city("Paris").build();
         requestBody.id = UUID.fromString("00112233-4455-6677-8899-aabbccddeeff");
         requestBody.profileImage = testFile;
 

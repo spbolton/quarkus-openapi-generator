@@ -37,7 +37,7 @@ public class OpenWeatherTest {
     @Test
     public void testGetWeatherByLatLon() {
         final Model200 model = weatherApi.currentWeatherData("", "", "10", "-10", "", "", "", "");
-        assertEquals("Nowhere", model.getName());
+        assertEquals("Nowhere", model.name());
         assertNotNull(weatherUrl);
         openWeatherServer.verify(WireMock.getRequestedFor(
                 WireMock.urlEqualTo("/data/2.5/weather?q=&id=&lat=10&lon=-10&zip=&units=&lang=&mode=&appid=" + apiKey)));

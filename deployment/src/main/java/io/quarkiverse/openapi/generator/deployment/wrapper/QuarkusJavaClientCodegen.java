@@ -65,6 +65,19 @@ public class QuarkusJavaClientCodegen extends JavaClientCodegen {
 
         modelTemplateFiles.clear();
         modelTemplateFiles.put("model.qute", ".java");
+
+    }
+
+    @Override
+    public String toModelFilename(String name) {
+        String base = super.toModelFilename(name);
+        return name.endsWith("Enum") ? base : "Abstract" + base;
+    }
+
+    @Override
+    public String modelFilename(String templateName, String modelName) {
+        String suffix = modelTemplateFiles().get(templateName);
+        return modelFileFolder() + File.separator + toModelFilename(modelName) + suffix;
     }
 
     public String authFileFolder() {
