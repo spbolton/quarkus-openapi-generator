@@ -72,7 +72,7 @@ public interface Abstract{m.classname} {#if m.parent}extends Abstract{m.parent}{
     {#if v.defaultValue}default {/if}{v.datatypeWithEnum} {v.name}(){#if v.defaultValue} { return {v.defaultValue}; };{#else};{/if}
     {#else}
     {#if !v.required && !v.defaultValue}@Nullable{/if}
-    {#if v.defaultValue}default {/if}{v.datatypeWithEnum} {v.name}(){#if v.defaultValue} { return {v.defaultValue} };{#else};{/if}
+    {#if v.defaultValue}default {/if}{v.datatypeWithEnum} {v.name}(){#if v.defaultValue} { return {v.defaultValue}; };{#else};{/if}
     {/if}
     {/if}
     {/for}
